@@ -1,0 +1,11 @@
+.Tilt {
+  background: linear-gradient(89deg, #FF5EDF 0%, #04C8DE 100%);
+  width: 150px;
+  height: 150px;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
