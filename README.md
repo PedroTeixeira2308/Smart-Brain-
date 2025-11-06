@@ -1,7 +1,7 @@
 # 🧠 Face Recognition Brain
 
 ![React](https://img.shields.io/badge/React-19-blue?logo=react)
-![Node.js](https://img.shields.io/badge/Node.js-20-green?logo=node.js)
+![Node.js](https://img.shields.io/badge/Node.js-24-green?logo=node.js)
 ![Express.js](https://img.shields.io/badge/Express.js-Framework-black?logo=express)
 ![Version](https://img.shields.io/badge/version-1.0.0-green)
 ![Vite](https://img.shields.io/badge/Built%20with-Vite-orange?logo=vite)
@@ -63,6 +63,9 @@ npm run dev
 src/
 ┣ assets/
 ┣ Components/
+┃ ┣ FaceRecognition/
+┃ ┃ ┣ FaceRecognition.css
+┃ ┃ ┗ FaceRecognition.jsx
 ┃ ┣ ImageLinkForm/
 ┃ ┃ ┣ ImageLinkForm.css
 ┃ ┃ ┗ ImageLinkForm.jsx
@@ -72,8 +75,12 @@ src/
 ┃ ┃ ┗ Logo.jsx
 ┃ ┣ Navigation/
 ┃ ┃ ┗ Navigation.jsx
-┃ ┗ Rank/
+┃ ┣ Rank/
 ┃ ┃ ┗ Rank.jsx
+┃ ┣ Register/
+┃ ┃ ┗ Register.jsx
+┃ ┗ SignIn/
+┃ ┃ ┗ SignIn.jsx
 ┣ App.css
 ┣ App.jsx
 ┣ index.css
