@@ -1,29 +1,30 @@
 # 🧠 Face Recognition Brain
 
 ![React](https://img.shields.io/badge/React-19-blue?logo=react)
-![Node.js](https://img.shields.io/badge/Node.js-24-green?logo=node.js)
-![Express.js](https://img.shields.io/badge/Express.js-Framework-black?logo=express)
-![Version](https://img.shields.io/badge/version-1.0.0-green)
 ![Vite](https://img.shields.io/badge/Built%20with-Vite-orange?logo=vite)
+![Version](https://img.shields.io/badge/version-1.0.0-green)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 
-A fullstack face detection web app built with **React**, **Node.js**, and **Express**.  
-Users can sign in, submit an image URL, and the app will detect faces using an external image recognition API.  
+Front-end for the **Smart Brain app** built with **React (Vite)** and designed to connect with the Node.js + Express backend.  
+Users can sign in, submit image URLs, and view detected faces returned from the API via the backend service.  
 
-The interface is clean, fully responsive, and enhanced with a **particles background**, a **3D tilt logo**, and **Tachyons CSS** for fast and consistent styling.  
-This project focuses on building a complete fullstack app — from component-based UI to server-side integration.
+The interface is clean, fully responsive, and enhanced with a **particles background**, a **3D tilt logo**, and **Tachyons CSS**.
+
+
+**Backend Repository:** [SmartBrain API (Node.js + Express)](https://github.com/PedroTeixeira2308/Smart-Brain-API.git)
 
 
 ## Tech Stack
 
 - **React.js** (Class Components)
-- **Node.js + Express.js** (backend logic and API)
+- **Vite** (Development + Build Tool)
 - **[Tachyons CSS](https://tachyons.io/)** (utility-first styling)
 - **[React Tilt](https://www.npmjs.com/package/react-parallax-tilt)** (3D logo animation)
 - **[Particles BG](https://www.npmjs.com/package/particles-bg)** (interactive background)
 - **JavaScript (ES6+)**
 - **HTML5 / CSS3**
+- *(Connects to external API via backend service)*
 - *(Database integration planned for next phase)*
 
 
@@ -31,8 +32,8 @@ This project focuses on building a complete fullstack app — from component-bas
 
 | Version | Description |
 |----------|--------------|
-| **v1.0** | Initial React front-end with structured components, layout and styling |
-| **Next** | Connect the backend with Node.js + Express, and start refactoring the front-end to use Functional Components and Hooks |
+| **v1.0.0** | First complete version — Front-end (React) integrated with backend (Node.js + Express) and Clarifai API logic handled server-side |
+| **Next** | Implement database integration and persist user data |
 
 ---
 
@@ -43,48 +44,60 @@ This project focuses on building a complete fullstack app — from component-bas
 - Using **Tachyons** for quick and consistent styling  
 - Implementing **React Tilt** for a 3D logo effect  
 - Adding **Particles Bg** for animated and dynamic backgrounds  
-- Planning a fullstack architecture to support future backend and database integration  
-- Keeping the codebase clean and organized while iterating quickly  
+
 
 
 ## Setup
 
 ```bash
+# Clone the front-end repository
 git clone https://github.com/PedroTeixeira2308/Smart-Brain-.git
 
+# Enter the project folder
 cd smart-brain
 
+# Install dependencies
 npm install
+
+# Start the development server
 npm run dev
+
+
+#Backend (required)
+
+> Make sure the backend server is running locally before testing the front-end.  
+> Clone and start it from here:  
+> [SmartBrain API (Node.js + Express)](https://github.com/PedroTeixeira2308/Smart-Brain-API.git)
+
 ```
 
 ## Project Structure
 ```markdown
 src/
-┣ assets/
-┣ Components/
-┃ ┣ FaceRecognition/
-┃ ┃ ┣ FaceRecognition.css
-┃ ┃ ┗ FaceRecognition.jsx
-┃ ┣ ImageLinkForm/
-┃ ┃ ┣ ImageLinkForm.css
-┃ ┃ ┗ ImageLinkForm.jsx
-┃ ┣ Logo/
-┃ ┃ ┣ brain.png
-┃ ┃ ┣ Logo.css
-┃ ┃ ┗ Logo.jsx
-┃ ┣ Navigation/
-┃ ┃ ┗ Navigation.jsx
-┃ ┣ Rank/
-┃ ┃ ┗ Rank.jsx
-┃ ┣ Register/
-┃ ┃ ┗ Register.jsx
-┃ ┗ SignIn/
-┃ ┃ ┗ SignIn.jsx
-┣ App.css
-┣ App.jsx
-┣ index.css
-┗ main.jsx
+ ┣ assets/
+ ┣ Components/
+ ┃ ┣ FaceRecognition/
+ ┃ ┃ ┣ FaceRecognition.css
+ ┃ ┃ ┗ FaceRecognition.jsx
+ ┃ ┣ ImageLinkForm/
+ ┃ ┃ ┣ ImageLinkForm.css
+ ┃ ┃ ┗ ImageLinkForm.jsx
+ ┃ ┣ Logo/
+ ┃ ┃ ┣ brain.png
+ ┃ ┃ ┣ Logo.css
+ ┃ ┃ ┗ Logo.jsx
+ ┃ ┣ Navigation/
+ ┃ ┃ ┗ Navigation.jsx
+ ┃ ┣ Rank/
+ ┃ ┃ ┗ Rank.jsx
+ ┃ ┣ Register/
+ ┃ ┃ ┗ Register.jsx
+ ┃ ┗ SignIn/
+ ┃ ┃ ┗ SignIn.jsx
+ ┣ App.css
+ ┣ App.jsx
+ ┣ index.css
+ ┗ main.jsx
 ```
 
 ## Features
