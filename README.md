@@ -2,7 +2,7 @@
 
 ![React](https://img.shields.io/badge/React-19-blue?logo=react)
 ![Vite](https://img.shields.io/badge/Built%20with-Vite-orange?logo=vite)
-![Version](https://img.shields.io/badge/version-1.0.0-green)
+![Version](https://img.shields.io/badge/version-1.1.0-green)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 
@@ -24,18 +24,25 @@ The interface is clean, fully responsive, and enhanced with a **particles backgr
 - **[Particles BG](https://www.npmjs.com/package/particles-bg)** (interactive background)
 - **JavaScript (ES6+)**
 - **HTML5 / CSS3**
-- *(Connects to external API via backend service)*
-- *(Database integration planned for next phase)*
+- *(Connected to Smart Brain API v1.1.0 — now supports PostgreSQL + bcrypt authentication)*
 
 
 ## Version History
 
 | Version | Description |
 |----------|--------------|
+| **v1.1.0** | Added notifications for login/register feedback, improved form validation |
 | **v1.0.0** | First complete version — Front-end (React) integrated with backend (Node.js + Express) and Clarifai API logic handled server-side |
-| **Next** | Implement database integration and persist user data |
+
 
 ---
+
+## What's New (v1.1.0)
+
+- Added **notifications** for invalid login or registration attempts  
+- **form validation** with user-friendly messages  
+- Better **error handling** in `fetch` requests to backend  
+
 
 ## What I Learned
 
@@ -113,6 +120,10 @@ src/
 - Responsive layout built with Tachyons
 
 - Clean, modular structure ready for backend integration
+
+- Integrated with real authentication backend (PostgreSQL + bcrypt)
+
+- Notifications for errors and validations
 
 
 ## Author
