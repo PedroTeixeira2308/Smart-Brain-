@@ -8,37 +8,45 @@ class Register extends React.Component {
     this.state = {
       email: '',
       password: '',
-      name: ''
+      name: '',
+      errorMessage: ''
     }
   }
 
   onNameChange = (event) => {
-    this.setState({name: event.target.value});
+    this.setState({name: event.target.value, errorMessage: ''});
   }
   onEmailChange = (event) => {
-    this.setState({email: event.target.value});
+    this.setState({email: event.target.value, errorMessage: ''});
   }
   onPasswordChange = (event) => {
-    this.setState({password: event.target.value});
+    this.setState({password: event.target.value, errorMessage: ''});
   }
 
   onSubmitRegister = () => {
+    const { name, email, password } = this.state;
+    if (!name || !email || !password) {
+      this.setState({ errorMessage: 'Preenche todos os campos.' });
+      return;
+    }
     fetch('http://localhost:3000/register', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        name: this.state.name,
-        email: this.state.email,
-        password: this.state.password
+        name: name,
+        email: email,
+        password: password
       })
     }).then(response => response.json())
       .then(user => {
-        if(user) {
+        if(user.id) {
           this.props.loadUser(user);
           this.props.onRouteChange('home');
+        }else {
+          this.setState({ errorMessage: 'This user already exists.' });
         }
       })
-    
+      .catch(() => this.setState({ errorMessage: 'Unable to connect to the server. Please try again later.' }));
   }
   render() {
     return(
@@ -63,6 +71,20 @@ class Register extends React.Component {
             <div className="">
               <input onClick= {this.onSubmitRegister} className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="button" value="Register"/>
             </div>
+            {this.state.errorMessage && (
+              <div role="alert" aria-live="assertive" className="mt3 ba br2 b--light-red bg-washed-red dark-red w-100">
+                <div className="pa2 flex items-center justify-between">
+                  <span className="lh-title">{this.state.errorMessage}</span>
+                  <button
+                    onClick={() => this.setState({ errorMessage: '' })}
+                    aria-label="Fechar aviso"
+                    className="bn bg-transparent dark-red pointer f4 lh-solid"
+                  >
+                    ×
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </main>
       </article>

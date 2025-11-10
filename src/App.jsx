@@ -6,7 +6,7 @@ import Rank  from './Components/Rank/Rank';
 import FaceRecognition  from './Components/FaceRecognition/FaceRecognition';
 import SignIn  from './Components/SignIn/SignIn';
 import Register  from './Components/Register/Register';
-import ParticlesBg from 'particles-bg'
+import ParticlesBg from 'particles-bg';
 import './App.css';
 
 
@@ -152,8 +152,7 @@ class App extends Component {
               route === 'signIn'
               ? <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
               : <Register onRouteChange={this.onRouteChange} loadUser={this.loadUser}/>
-            )
-            
+            ) 
         }
       </div>
     );
