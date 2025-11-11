@@ -26,7 +26,7 @@ class Register extends React.Component {
   onSubmitRegister = () => {
     const { name, email, password } = this.state;
     if (!name || !email || !password) {
-      this.setState({ errorMessage: 'Preenche todos os campos.' });
+      this.setState({ errorMessage: 'Please fill in all fields' });
       return;
     }
     fetch('http://localhost:3000/register', {
