@@ -27,6 +27,15 @@ The interface is clean, fully responsive, and enhanced with a **particles backgr
 - *(Connected to Smart Brain API v1.1.0 — now supports PostgreSQL + bcrypt authentication)*
 
 
+## Architecture Overview
+```mermaid
+graph LR
+A[React Frontend] -->|HTTP/JSON| B[Express API]
+B -->|SQL| C[(PostgreSQL)]
+B -->|External| D[Clarifai API]
+```
+
+
 ## Version History
 
 | Version | Description |
