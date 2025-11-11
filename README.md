@@ -2,8 +2,11 @@
 
 ![React](https://img.shields.io/badge/React-19-blue?logo=react)
 ![Vite](https://img.shields.io/badge/Built%20with-Vite-orange?logo=vite)
-![Version](https://img.shields.io/badge/version-1.1.0-green)
+![Version](https://img.shields.io/badge/version-1.2.0-green)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
+
+**Live Demo:** [https://smart-brain-i48y.onrender.com](https://smart-brain-i48y.onrender.com)
 
 
 Front-end for the **Smart Brain app** built with **React (Vite)** and designed to connect with the Node.js + Express backend.  
@@ -24,7 +27,7 @@ The interface is clean, fully responsive, and enhanced with a **particles backgr
 - **[Particles BG](https://www.npmjs.com/package/particles-bg)** (interactive background)
 - **JavaScript (ES6+)**
 - **HTML5 / CSS3**
-- *(Connected to Smart Brain API v1.1.0 — now supports PostgreSQL + bcrypt authentication)*
+*(Connected to Smart Brain API v1.1.1 — now supports PostgreSQL, bcrypt authentication, and Clarifai image recognition via backend)*
 
 
 ## Architecture Overview
@@ -40,6 +43,7 @@ B -->|External| D[Clarifai API]
 
 | Version | Description |
 |----------|--------------|
+| **v1.2.0** | Frontend deployed (Render), centralized API config via `.env.local`|
 | **v1.1.1** | Code Review Improvements|
 | **v1.1.0** | Added notifications for login/register feedback, improved form validation |
 | **v1.0.0** | First complete version — Front-end (React) integrated with backend (Node.js + Express) and Clarifai API logic handled server-side |
@@ -47,8 +51,12 @@ B -->|External| D[Clarifai API]
 
 ---
 
-## What's New (v1.1.0)
+## What's New (v1.2.0)
 
+- Frontend successfully deployed to Render as a **Static Site**
+- Added `.env.local` configuration for environment variables (`VITE_API_URL`)
+- Centralized API endpoints into `src/config/api.js`
+- Improved development setup and documentation
 - Added **notifications** for invalid login or registration attempts  
 - **form validation** with user-friendly messages  
 - Better **error handling** in `fetch` requests to backend  
@@ -75,6 +83,10 @@ cd smart-brain
 
 # Install dependencies
 npm install
+
+# Create a local environment file
+# .env.local
+VITE_API_URL=https://<your-backend-api>.com
 
 # Start the development server
 npm run dev
@@ -111,6 +123,8 @@ src/
 ┃ ┃ ┗ Register.jsx
 ┃ ┗ SignIn/
 ┃ ┃ ┗ SignIn.jsx
+┣ config/
+┃ ┗ api.js
 ┣ App.css
 ┣ App.jsx
 ┣ index.css
@@ -134,6 +148,11 @@ src/
 - Integrated with real authentication backend (PostgreSQL + bcrypt)
 
 - Notifications for errors and validations
+
+- Environment-based API configuration using `.env.local` and centralized helper (`src/config/api.js`)
+
+- Fully deployed version with SPA routing (`/* → /index.html`)
+
 
 
 ## Author
